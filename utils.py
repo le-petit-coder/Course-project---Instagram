@@ -34,7 +34,7 @@ def search_for_posts(query):
     posts_by_query = []
     posts = get_posts_all()
     for post in posts:
-        if query.lower() in post["content"].lower().split():
+        if query.lower() in post["content"].lower():
             posts_by_query.append(post)
     return posts_by_query
 

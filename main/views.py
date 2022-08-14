@@ -13,6 +13,8 @@ logger_one.setLevel("INFO")
 formatter_one = logging.Formatter("%(asctime)s [%(levelname)s] %(message)s")
 file_handler = logging.FileHandler(filename="api.log")
 file_handler.setFormatter(formatter_one)
+console_handler = logging.StreamHandler()
+logger_one.addHandler(console_handler)
 logger_one.addHandler(file_handler)
 
 
