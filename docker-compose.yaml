@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  app:
+    image: flask_app
+  db:
+    image: postgres
+    environment:
+    - POSTGRES_USER=flask_app
+    - POSTGRES_PASSWORD=flask_app_password
+    - POSTGRES_USER=flask_app_db
+    ports:
+    - 5433:5432
+#  postgres:
+#    image: postgres:latest

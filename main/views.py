@@ -4,7 +4,6 @@ from flask import Blueprint, render_template, request, jsonify
 
 import utils
 
-
 main_blueprint = Blueprint('main_blueprint', __name__, template_folder='templates')
 
 
@@ -66,3 +65,16 @@ def json_post_one(post_id):
     post = utils.get_post_by_pk(post_id)
     logger_one.info(f"Запрос /api/posts {post_id}")
     return jsonify(post)
+
+
+# @main_blueprint.route("/test_db")
+# def test_db():
+#     result = db.session.execute(
+#         'SELECT_1'
+#     ).scalar_one()
+#
+#     return jsonify(
+#         {
+#             "result": result
+#         }
+#     )

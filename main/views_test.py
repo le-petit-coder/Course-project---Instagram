@@ -1,4 +1,4 @@
-from run import app
+from app import app
 import pytest
 
 key_data = ["poster_name", "poster_avatar", "pic", "content", "views_count", "likes_count",
