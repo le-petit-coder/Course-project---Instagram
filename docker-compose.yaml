@@ -12,4 +12,3 @@ services:
     - POSTGRES_USER=flask_app_db
     ports:
     - 5433:5432
-    -

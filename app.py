@@ -1,3 +1,5 @@
+import os
+
 from flask import Flask
 from main.views import main_blueprint
 # from db import db
@@ -5,12 +7,11 @@ from main.views import main_blueprint
 app = Flask(__name__)
 # db.init_db(app)
 app.register_blueprint(main_blueprint)
-DB_USER = 'db_user'
-DB_PASSWORD = 'db_password'
-DB_NAME = 'db_name'
-DB_PORT = 5434
-DB_HOST = '127.0.0.1'
-app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{DB_NAME}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}'
+DB_USER = os.getenv('DB_USER')
+DB_PASSWORD = os.getenv('DB_PASSWORD')
+DB_NAME = os.getenv('DB_NAME')
+DB_HOST = 'db'
+app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{DB_NAME}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
