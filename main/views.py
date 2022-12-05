@@ -33,7 +33,7 @@ def get_post(post_id):
 
 
 @main_blueprint.route("/search/")
-def search_posts():
+def search_by_posts():
     query = request.args.get('s', '')
     posts = utils.search_for_posts(query)
     logger_one.info("Поиск постов запрошен")
